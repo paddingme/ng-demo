@@ -47,7 +47,7 @@
         return MAX_LEN - $scope.message.length ;
       }
       $scope.send = function(){
-        alert("successed!")
+        alert("successed!");
       };
       $scope.showWarn = function(){
        return MAX_LEN - $scope.message.length < WARN_LEN;
@@ -56,7 +56,7 @@
         $scope.message ="";
       };
       $scope.hasValidLength = function(){
-         return $scope.message.length > 0 && $scope.message.length < 30;
+         return $scope.message.length > 0 && $scope.message.length < MAX_LEN;
       }
   }])
 

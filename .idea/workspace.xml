@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02312836-3a78-49c2-85a8-02366e04b807" name="Default" comment="" />
+    <list default="true" id="02312836-3a78-49c2-85a8-02366e04b807" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/message-box.html" afterPath="$PROJECT_DIR$/message-box.html" />
+    </list>
     <ignored path="ng-demo.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,18 +29,8 @@
       <file leaf-file-name="message-box.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/message-box.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21985815" vertical-offset="720" max-vertical-offset="1725">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LICENSE" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENSE">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6028369" vertical-offset="75" max-vertical-offset="1800">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -116,6 +108,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="FullScreen" value="false" />
+    <property name="editorconfig.notification" value="Applied .editorconfig settings" />
   </component>
   <component name="RunManager">
     <list size="0" />
@@ -218,6 +211,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/Documents/Downloads/新建文件夹 (3)/新建文件夹 (3)/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.4407716" vertical-offset="8674" max-vertical-offset="9550">
+          <caret line="218" column="32" selection-start-line="218" selection-start-column="32" selection-end-line="218" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="739">
@@ -228,8 +229,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/message-box.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21985815" vertical-offset="720" max-vertical-offset="1725">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6028369" vertical-offset="75" max-vertical-offset="1800">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding />
         </state>
       </provider>
