@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="../../lib/bootstrap.min.css">
+    <script src="../../lib/angular.min.js"></script>
+    <style>
+        .donetrue,.done0 {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body ng-app="todoApp" class="container">
+
+    <h1>TODO</h1>
+
+    <div ng-controller="todoCtrl">
+        <div>
+            <span>{{remaining()}} of {{todos.length}} remaining</span>
+            [<a href="javascript:void(0)" ng-click="archive()">archive</a>]
+        </div>
+
+        <ul>
+            <li ng-repeat="todo in todos">
+                <input type="checkbox" ng-model="todo.done">
+                <!-- ng-model=true checked = checked -->
+                <span class="done{{todo.done}}">{{todo.text}}</span>
+            </li>
+        </ul>
+
+        <form ng-submit="addTodo()">
+            <input type="text" ng-model="todoText" placeholder="ADD NEW TODO HERE">
+            <input type="submit" value="add" class="btn btn-primary">
+        </form>
+    </div>
+
+    <script>
+    angular.module('todoApp', []).controller('todoCtrl', ['$scope', function($scope){
+        $scope.todos = [
+            {done:false,text:"我是一个小画家"},
+            {done:true,text:"你是一个照相机"}
+        ];
+
+
+        $scope.remaining = function(){
+            // console.log($scope.todos)
+            // return $scope.todos.reduce(function(pre,cur){
+            //     // if(typeof pre != "object") return 1;
+            //     return pre.done+cur.done;
+            // })
+            //
+            var b  = 0;
+            for(var i = 0; i < $scope.todos.length;i++) {
+                if($scope.todos[i].done==1)
+                    b++;
+            }
+            return b;
+
+        }
+
+        $scope.archive = function(){
+            // var tt = $scope.todos;
+            // tt.forEach(function(ele,index){
+            //     if(!ele.done) $scope.todos.pop($scope.todos[index]);
+            // });
+            //
+            //
+
+            var a = [];
+
+            for(var i = 0; i < $scope.todos.length;i++) {
+                if($scope.todos[i].done==0)
+                    a.push($scope.todos[i]);
+            }
+
+            $scope.todos = a;
+        }
+
+
+        $scope.addTodo = function(){
+            var newTodo = {};
+            newTodo.done = false;
+            newTodo.text = $scope.todoText;
+            $scope.todos.push(newTodo);
+            $scope.todoText = null;
+        }
+
+    }])
+    </script>
+</body>
+</html>

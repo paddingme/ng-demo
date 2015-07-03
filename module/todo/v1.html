@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo demo</title>
+    <link rel="stylesheet" href="../../lib/bootstrap.min.css">
+    <script src="../../lib/angular.min.js"></script>
+    <style>
+        li {list-style: none;}
+    </style>
+</head>
+<body ng-app="todolist" ng-init="todos=[{done:0,text:'hahah'},{done:1,text:'1111'}]">
+
+    <div class="container" ng-controller="todoCtrl">
+        <h1>Todo List</h1>
+        <ul>
+            <li ng-repeat="todo in todos">
+                <input type="checkbox" ng-checked="todo.done">
+                <span>{{todo.text}}</span>
+            </li>
+        </ul>
+        <div>
+            <input type="text" ng-model="new" placeholder="请输入TODO things">
+            <button type="button" class="btn btn-info" ng-click="send()">添加</button>
+        </div>
+    </div>
+
+    <script>
+        angular.module('todolist', []);
+        angular.module('todolist').controller('todoCtrl', ['$scope', function($scope){
+            $scope.send = function(){
+                // alert(1111);
+                var a = {};
+                a.text =$scope.new;
+                $scope.todos.push(a);
+                $scope.new = "";
+                scope.$apply("");
+
+            }
+       }])
+    </script>
+</body>
+</html>

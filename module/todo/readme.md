@@ -1,0 +1,1 @@
+默认界面上有2个todo，一个完成一个未完成，每个todo前面有个checkbox表示是否已完成，下面有个输入框和添加按钮，输入内容点击添加则列表上会多一个todo。大家可以先不用看下面的代码，自己尝试做一下，这个例子需要用到的几个directive：<li ng-repeat="todo in todos"> 表示循环todos列表，在li标签内部就可以写模板语言显示每个todo的内容，如{{toodo.text}} 。
