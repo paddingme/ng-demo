@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../lib/bootstrap.min.css">
+    <script src="../../lib/angular.min.js"></script>
+</head>
+<body ng-app="ezstuff" ng-init="sb={name:'haha',age:24,job:'3a0'}">
+    <ez-namecard data="sb"></ez-namecard>
+    <ez-namecard-editor data="sb"></ez-namecard-editor>
+
+<script>
+/**
+* ezstuff Module
+*
+* Description
+*/
+angular.module('ezstuff', [])
+.directive('ezNamecard',function($rootScope){
+    return {
+        restrict : 'E',
+        link : function(scope,element,attrs){
+            element.append("<div><span field='name'></div><div><span field='age'></div><div><span field='job'></div>");
+            scope.$watch(attrs.data,function(nv,ov){
+                var fields = element.find("span");
+                fields[0].innerText = nv.name;
+                fields[1].innerText = nv.age;
+                fields[2].innerText = nv.job;
+            },true);
+        }
+    }
+})
+.directive('ezNamecardEditor',function($rootScope){
+    return {
+        restrict : 'E',
+        link : function(scope,element,attrs){
+            var model = attrs.data;
+            element.append("<div>name: <input type='text' field='name'/></div>")
+            .append("<div>age: <input type='text' field='age'/></div>")
+            .append("<div>job: <input type='text' field='job'/></div>");
+
+            element.find("input").on("keyup",function(el){
+                var field = el.target.getAttribute("field");
+                console.log([model,field]);
+                scope[model][field] = el.target.value;
+                scope.$apply("");
+            })
+        }
+    }
+});
+</script>
+</body>
+</html>

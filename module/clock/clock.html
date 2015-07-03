@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Clock Demo</title>
-    <script src="lib/angular.min.js"></script>
+    <script src="../../lib/angular.min.js"></script>
 </head>
 <body ng-app="ezstuff">
     <ez-clock></ez-clock>
@@ -23,7 +23,7 @@ angular.module('ezstuff', [])
             setInterval(function(){
                 var d = new Date();
                 element.text(d.toString());
-            },3000);
+            },1000);
         }
     }
 });

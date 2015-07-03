@@ -50,3 +50,17 @@ ng-controller指令就是用来定义应用程序控制器的，并且同时创�
 1. 声明式界面开发
 2. 双向数据绑定
 3. 使用依赖注入解耦
+
+
+    /*
+        修改scope上的sb对象的name属性
+    */
+    //方法1：直接修改sb对象. 不会自动触发监听函数
+    scope.sb.name = 'Tonny';
+
+    //方法2：使用scope的$apply方法，在数据修改后会自动触发监听函数
+    scope.$apply("sb.name = 'Tonny'");
+
+    //方法3：直接修改sb对象，然后调用$apply方法来传播变化。
+    scope.sb.name = 'Tonny';
+    scope.$apply("");
