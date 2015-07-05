@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>TodoList</title>
+    <link rel="stylesheet" href="../../lib/bootstrap.min.css">
+    <script src="../../lib/angular.min.js"></script>
+    <style>
+        .done-true {
+            text-decoration: line-through;
+            color: grey;
+        }
+    </style>
+</head>
+<body ng-app="todoApp" class="container">
+    <h2>Todo</h2>
+    <div ng-controller="TodoListController as todoList">
+        <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+        [<a href="javascript:void(0)" ng-click="todoList.archive()"> archive</a>]
+
+        <ul class="unstyled">
+            <li ng-repeat="todo in todoList.todos">
+                <input type="checkbox" ng-model="todo.done">
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+        </ul>
+        <form ng-submit="todoList.addTodo()">
+            <input type="text" ng-model="todoList.todoText" size="30" placeholder="add new todo here">
+            <input type="submit" class="btn-primary" value="add">
+        </form>
+    </div>
+
+<script>
+    angular.module('todoApp', [])
+        .controller('TodoListController', function(){
+            var todoList = this;
+            todoList.todos = [
+                {text:'learn angular', done:true},
+                {text:'build an angular app', done:false}
+            ];
+            todoList.addTodo = function(){
+                todoList.todos.push({text:todoList.todoText,done:false});
+                todoList.todoText = "";
+            };
+            todoList.remaining = function(){
+                var count = 0;
+                angular.forEach(todoList.todos,function(todo){
+                    count += todo.done ? 0:1;
+                });
+                return count;
+            };
+            todoList.archive = function(){
+                var oldTodos = todoList.todos;
+                todoList.todos = [];
+                angular.forEach(oldTodos,function(todo){
+                    if(!todo.done) todoList.todos.push(todo);
+                })
+            };
+    })
+</script>
+</body>
+</html>

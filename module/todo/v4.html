@@ -10,7 +10,7 @@
             }
         </style>
     </head>
-    <body>
+    <body ng-app>
         <h2>Todo</h2>
         <div ng-controller="TodoController">
             <span>{{remaining()}} of {{todos.length}} remaining</span>
@@ -27,7 +27,7 @@
                 <input class="btn-primary" type="submit" value="add">
             </form>
         </div>
-    <script src="http://ngnice.com/lib/angular/1.2.16/angular.js"></script>
+    <script src="../../lib/angular.min.js"></script>
     <script>
         angular.module('todoApp', [])
                 .controller('TodoController', ['$scope', function($scope) {
