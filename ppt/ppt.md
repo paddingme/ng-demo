@@ -1,9 +1,21 @@
 
-1. angularjs 是什么？
-    背景/现状
-2. angularjs 能做什么？
-    端到端测试/单元测试
 
+Angularjs 初探
+
+1. angularjs 是什么？
+
+
+    背景/现状
+    Angularjs 1.4
+    Angularjs 2.0
+
+
+2. angularjs 能做什么？
+
+
+
+    端到端测试/单元测试
+    使用场景：XXX
 
 
 3. angularjs 怎么做的？
@@ -14,6 +26,8 @@
 
 
 4. 怎么写 angularjs?
+
+
     1. 写声明化 html : 自定义指令 组件
 
 
