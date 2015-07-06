@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <link rel="stylesheet" href="../../lib/bootstrap.min.css">
+    <script src="../../lib/angular.min.js"></script>
+</head>
+<body ng-app ng-init="name='World'">
+    <label>Name:</label>
+    <input type="text" ng-model="name" placeholder="Enter a name here">
+     <hr>
+     <h1>Hello,{{name}}!</h1>
+</body>
+</html>
+
+
+
+
+<!-- ng-app 引导bootstrap -->
+<!-- ng-model 绑定模型 -->
+<!-- {{}} 输出模型值的表达式 -->
+
+<!-- 数据双向绑定 view 随着视图的变化而变化 -->
+
+<!-- 任何用户引发的视图的改变，会映射到模型上，继而任何模型的改变，也会立刻传播到整个模板上 -->

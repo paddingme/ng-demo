@@ -158,3 +158,65 @@ REST and Custom Services（如‘$http’）
 
 
 Be sure to use jQuery version 2.1 or newer when using Angular 1.3; jQuery 1.x is not officially supported. Be sure to load jQuery before all AngularJS scripts, otherwise AngularJS won't detect jQuery and animations will not work as expected.
+
+
+## 精通 Angularjs
+
+
+
+AngularJS 中的 $scope 对象 是模板的域模型（domian model）,也称为作用域实例，
+通过为其属性赋值，可以传递数据给模板渲染。
+
+作用域可以加入域模板相关的数据和提供相关的功能，例如为作用域实例定义方法，以封装 UI 交互逻辑提供模板使用。
+
+
+从作用上讲，Angularjs 的作用域与 MVVM 模式的视图模型非常相似。
+
+
+
+控制器的作用是初始化作用域实例:
+1. 提供模型的初始值；
+
+2.增加 UI 相关的行为（函数），以扩展 $scope 对象。
+
+
+
+
+ng-controller 创建作用域$scope
+
+
+<body ng-app ng-init="name='world'">
+    <h1>Hello,{{name}}!</h1>
+    <div ng-controller="HelloCtrl">
+        Say Hello to: <input type="text" ng-model="name">
+        <h2>Hello,{{name}}!</h2>
+    </div>
+</body>
+
+
+
+<body ng-app ng-init="things={name:'world'}">
+    <h1>Hello,{{things.name}}</h1>
+    <div ng-controller="HelloCtrl">
+        Say Hello to: <input type="text" ng-mode="things.name">
+        <h2>Hello,{{things.name}}</h2>
+    </div>
+</body>
+
+
+$scope.$on('$locationChangeSuccess',function(event,newUrl,oldUrl){
+    // 这里对地址的变化做出反应
+});
+
+
+
+## 与后端通信
+
+
+jsonp:
+
+$http.jonp('http://angularjs.org/greet.php?callback=JSON_CALLBACK',{
+    params: {name:'World'}
+}).success(function(data){
+    $scope.greeting = data;
+});
