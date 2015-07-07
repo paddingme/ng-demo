@@ -8,7 +8,7 @@ angular.module('myapp'); 引用这个模块
 
 AngularJS script tag:
 
-<script src="bower_components/angular/angular.js">
+`<script src="bower_components/angular/angular.js">`
 
 这个脚本会下载 Angularjs，并注册一个回调，当 html 下面加载完成之后将会被执行，执行时首先寻找 ngApp 指令。如果找到 ngApp 指令它将会从应用 DOM 的根节点(即ngApp 所在位置)开始引导。
 
