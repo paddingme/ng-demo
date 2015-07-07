@@ -165,7 +165,7 @@ Angular will then "compile" the DOM starting at the ngApp root element, processi
 ng-app
 ng-init
 ng-model
-{{ }}  ---》 输出模型的表达式
+{{expression}}  ---》 输出模型的表达式
 
 
 介绍 directive 指令

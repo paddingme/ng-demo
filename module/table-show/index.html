@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>table demo</title>
+    <link rel="stylesheet" href="../../lib/bootstrap.min.css">
+    <script src="../../lib/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="listApp"class="container">
+    <table class="table table-bordered" ng-controller="ListAndOneDetailCtrl">
+        <tbody ng-repeat="user in users" ng-click="selected(user)" ng-switch on="isSelected(user)">
+            <tr>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+            <tr ng-switch-when="true">
+                <td>{{user.desc}}</td>
+                <td><img src="{{user.img}}" alt="" width="200" height="300"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+</body>
+</html>

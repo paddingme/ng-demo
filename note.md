@@ -226,3 +226,69 @@ $http.jonp('http://angularjs.org/greet.php?callback=JSON_CALLBACK',{
 }).success(function(data){
     $scope.greeting = data;
 });
+
+
+
+
+### 显示与格式化数据
+
+
+1. 插值指令：{{expression}}  == ng-bind
+
+2. 表达式里的 html 内容：
+  - ng-bind-html-unsafe
+  - ng-bind-html
+
+3. 条件话显示：
+  - ng-show/ng-hide
+  - ng-switch-*
+        ```
+        <div ng-switch on="showSecret">
+            <div ng-switch-when="true">Secret</div>
+            <div ng-switch-default>Won't show you secret!</div>
+        </div>
+        ```
+  - ng-if
+  - ng-include
+        ```
+        <div ng-include="user.admin && 'edit.admin.html'||'edit.user.html'" ></div>
+        ```
+
+4. ng-repeat
+
+    ```
+    <li ng-repeat="(key, value) in dataset">
+        Property {{$index}} with {{key}} has value {{value}}
+    </li>
+    ```
+
+    ```
+    <table class="table table-bordered" ng-controller="ListAndPmeDetailCtrl">
+        <tbody ng-repeat="user in users" ng-click="selectUser(user)" ng-switch on="isSeleted(user)">
+            <tr>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+            <tr ng-switch-when="true">
+                <td colspan="2">{{user.desc}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+    .controller('ListAndPmeDetailCtrl', function($scope,users){
+        $scope.users = users;
+        $scope.selectUser = function(user) {
+            $scope.selectedUser = user;
+        }
+
+        $scope.isSeleted = function(user) {
+            return $scope.selectedUser === user;
+        }
+    })
+    </script>
+
+    ```
+5. 特殊变量：$index,$first,$middle,$last
+
+
