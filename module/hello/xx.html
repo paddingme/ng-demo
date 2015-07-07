@@ -2,11 +2,25 @@
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Hello World</title>
+    <link rel="stylesheet" href="../../lib/bootstrap.min.css">
+    <script src="../../lib/angular.min.js"></script>
+    <script src="helloCtrl.js"></script>
 </head>
-<body>
-    <div style="height:30px;border:1px solid red">
-        <div style="height:100%;outline:1px solid"></div>
-    </div>
+<body ng-app="helloApp" ng-controller="helloCtrl">
+
+    <div>{{name}}</div>
+
+<script>
+    var hello = angular.module('helloApp',[]);
+    hello.controller('helloCtrl',function($scope,$timeout){
+        $scope.name = "1";
+        $timeout(function(){
+            $scope.name ++;
+        },1000);
+    });
+</script>
 </body>
 </html>
+
+

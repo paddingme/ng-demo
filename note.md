@@ -1,6 +1,13 @@
 1. ng-app  指令 Angularjs 应用的 root。
 
+angular.module('myapp',[]); 声明这个模块
+
+
+angular.module('myapp'); 引用这个模块
+
+
 AngularJS script tag:
+
 <script src="bower_components/angular/angular.js">
 
 这个脚本会下载 Angularjs，并注册一个回调，当 html 下面加载完成之后将会被执行，执行时首先寻找 ngApp 指令。如果找到 ngApp 指令它将会从应用 DOM 的根节点(即ngApp 所在位置)开始引导。
@@ -19,8 +26,6 @@ Angular will then "compile" the DOM starting at the ngApp root element, processi
 
 
 
-In Angular, the view is a projection of the model through the HTML template.
-This means that whenever the model changes, Angular refreshes the appropriate binding points, which updates the view.
 
 
 
@@ -28,6 +33,8 @@ This means that whenever the model changes, Angular refreshes the appropriate bi
 
 
 控制器允许我们来增强在模型层和视图层的数据绑定，通过提供我们数据模型的上下文。；
+
+
 By providing context for our data model, the controller allows us to establish data-binding between the model and the view.
 
 
@@ -75,7 +82,7 @@ The $http service returns a promise object with a success method. We call this m
 
 To use a service in Angular, you simply declare the names of the dependencies you need as arguments to the controller's constructor function, as follows:
 
-    phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {...}
+phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {...}
 
 
 
@@ -130,7 +137,7 @@ when asked to do so, inject a specified function and any necessary dependencies 
 
 
 
-roviders are objects that provide (create) instances of services and expose configuration APIs that can be used to control the creation and runtime behavior of a service.
+Providers are objects that provide (create) instances of services and expose configuration APIs that can be used to control the creation and runtime behavior of a service.
 
 phonecatControllers.controller('PhoneDetailCtrl',['$scope','$routeParams','http',function($scope,$routeParams,$http){
         $http.get('phones/'+.phoneId +'.json').success(
@@ -176,7 +183,6 @@ AngularJS 中的 $scope 对象 是模板的域模型（domian model）,也称为
 
 控制器的作用是初始化作用域实例:
 1. 提供模型的初始值；
-
 2.增加 UI 相关的行为（函数），以扩展 $scope 对象。
 
 
