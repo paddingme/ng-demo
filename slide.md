@@ -63,6 +63,11 @@ view: In Angular, the view is a projection of the model through the HTML templat
 This means that whenever the model changes, Angular refreshes the appropriate binding points, which updates the view.
 
 
+MVC components in angular:
+
+Model — Models are the properties of a scope; scopes are attached to the DOM where scope properties are accessed through bindings.
+View — The template (HTML with data bindings) that is rendered into the View.
+Controller — The ngController directive specifies a Controller class; the class contains business logic behind the application to decorate the scope with functions and values
 
 声明式模板视图，
 命令式控制逻辑。
@@ -165,7 +170,7 @@ Angular will then "compile" the DOM starting at the ngApp root element, processi
 ng-app
 ng-init
 ng-model
-{{expression}}  ---》 输出模型的表达式
+{{expression   }}  ---》 输出模型的表达式
 
 
 介绍 directive 指令

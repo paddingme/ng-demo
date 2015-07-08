@@ -6,22 +6,30 @@
     <link rel="stylesheet" href="../../lib/bootstrap.min.css">
     <script src="../../lib/angular.min.js"></script>
     <script src="app.js"></script>
+    <style>
+        .table>tbody {
+            border: 2px solid gray;
+        }
+         table.light-gray tr{
+            color: red;
+            border: 10px solid red;
+        }
+    </style>
 </head>
 <body ng-app="listApp"class="container">
     <table class="table table-bordered" ng-controller="ListAndOneDetailCtrl">
-        <tbody ng-repeat="user in users" ng-click="selected(user)" ng-switch on="isSelected(user)">
-            <tr>
+        <tbody ng-repeat="user in users"ng-class="light-gray">
+            <tr  >
                 <td>{{user.name}}</td>
                 <td>{{user.email}}</td>
             </tr>
-            <tr ng-switch-when="true">
-                <td>{{user.desc}}</td>
-                <td><img src="{{user.img}}" alt="" width="200" height="300"></td>
+            <tr>
+                <td colspan="2">{{user.desc}}</td>
+                <!-- <td><img src="{{user.img}}" alt="" width="300"></td> -->
             </tr>
         </tbody>
     </table>
 
-    <hr>
 
 </body>
 </html>
